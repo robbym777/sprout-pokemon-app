@@ -11,7 +11,7 @@ const getMoreDetailPokemon = async ({
 }: RequestGetDetailPokemon): Promise<DetailPokemon | undefined> => {
   const resPokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
   if (!resPokemon.ok) return undefined;
-  const pokemon = (await resPokemon.json()) ;
+  const pokemon = await resPokemon.json();
 
   const resPokemonSpecies = await fetch(pokemon?.species?.url);
   if (!resPokemonSpecies.ok) return undefined;
@@ -34,8 +34,13 @@ const getMoreDetailPokemon = async ({
 
   let chain = evolutionData.chain;
   while (chain) {
-    const name = chain.species.name;
-    evolutions.push(name);
+    const evolutionVerRes = await fetch(chain?.species?.url);
+    if (evolutionVerRes.ok) {
+      const evolutionVerData = await evolutionVerRes.json();
+      evolutionVerData?.varieties?.map((v: any) => {
+        evolutions.push(v?.pokemon?.name);
+      });
+    }
     chain = chain.evolves_to.length ? chain.evolves_to[0] : null;
   }
 

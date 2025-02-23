@@ -46,6 +46,7 @@ const PokemonCardComponent = ({ name }: PokemonCardComponentProps) => {
       </p>
       {data?.sprites ? (
         <Image
+          unoptimized
           src={{ src: data?.sprites, width: 512, height: 512 }}
           alt="sprites"
           className="w-auto h-[60%]"

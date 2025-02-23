@@ -1,4 +1,4 @@
-import { PokemonCardComponent, ProgressBarComponent } from "@/components";
+import { CircularLoading, PokemonCardComponent, ProgressBarComponent } from "@/components";
 import { getMoreDetailPokemon } from "@/services";
 import {
   capitalize,
@@ -37,16 +37,20 @@ const Page = async ({ params }: Props) => {
         flex flex-col items-center
       "
       >
-        <Image
-          src={{
-            src: pokemon?.sprites ?? "",
-            width: 512,
-            height: 512,
-          }}
-          alt="sprites"
-          className="w-[107px] sm:w-[160px] lg:w-[208px] 2xl:w-[256px] h-auto"
-        />
-
+        {pokemon?.sprites ? (
+          <Image
+            unoptimized
+            src={{
+              src: pokemon.sprites,
+              width: 512,
+              height: 512,
+            }}
+            alt="sprites"
+            className="w-[107px] sm:w-[160px] lg:w-[208px] 2xl:w-[256px] h-auto"
+          />
+        ) : (
+          <CircularLoading />
+        )}
         <div className={`flex flex-col justify-between p-4 z-10 gap-4`}>
           <div className="relative h-full w-full rounded-lg items-center justify-center">
             <div
