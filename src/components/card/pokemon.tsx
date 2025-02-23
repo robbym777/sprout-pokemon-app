@@ -3,6 +3,7 @@ import { useRouter } from "next/navigation";
 import { getDetailPokemon, Pokemon } from "@/services";
 import CircularLoading from "./circularLoading";
 import { capitalize } from "@/utils";
+import Image from "next/image";
 
 interface PokemonCardComponentProps {
   name: string;
@@ -17,7 +18,7 @@ const PokemonCardComponent = ({ name }: PokemonCardComponentProps) => {
     getDetailPokemon({ name: name }).then((detail) => {
       if (detail) setData(detail);
     });
-  }, []);
+  }, [name]);
 
   return (
     <button
@@ -38,11 +39,17 @@ const PokemonCardComponent = ({ name }: PokemonCardComponentProps) => {
         if (data) router.push(`/${data.name}`);
       }}
     >
-      <p className={`font-semibold text-primary [text-shadow:_-2px_-2px_4_#4062AB,2px_2px_4_#4062AB] text-[5vw] sm:text-[24px]`}>
+      <p
+        className={`font-semibold text-primary [text-shadow:_-2px_-2px_4_#4062AB,2px_2px_4_#4062AB] text-[5vw] sm:text-[24px]`}
+      >
         {capitalize(name)}
       </p>
       {data?.sprites ? (
-        <img alt="sprites" src={data?.sprites} className="w-auto h-[60%]" />
+        <Image
+          src={{ src: data?.sprites, width: 512, height: 512 }}
+          alt="sprites"
+          className="w-auto h-[60%]"
+        />
       ) : (
         <CircularLoading />
       )}

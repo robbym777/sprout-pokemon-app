@@ -6,6 +6,7 @@ import {
   idFormatter,
   weightFormatter,
 } from "@/utils";
+import Image from "next/image";
 
 type Props = {
   params: Promise<{ name: string }>;
@@ -36,9 +37,13 @@ const Page = async ({ params }: Props) => {
         flex flex-col items-center
       "
       >
-        <img
+        <Image
+          src={{
+            src: pokemon?.sprites ?? "",
+            width: 512,
+            height: 512,
+          }}
           alt="sprites"
-          src={pokemon?.sprites}
           className="w-[107px] sm:w-[160px] lg:w-[208px] 2xl:w-[256px] h-auto"
         />
 

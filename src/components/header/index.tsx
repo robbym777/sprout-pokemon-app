@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import FormSelectComponent from "../form/select";
 import { capitalize } from "@/utils";
+import Image from "next/image";
 
 const HeaderComponent = () => {
   const router = useRouter();
@@ -24,8 +25,12 @@ const HeaderComponent = () => {
     >
       {/* Logo Icon */}
       <button onClick={() => router.push("/")}>
-        <img
-          src="/pokemon.svg"
+        <Image
+          src={{
+            src: "/pokemon.svg",
+            width: 64,
+            height: 64,
+          }}
           alt="pokemon-logo"
           className="w-auto h-[7vw] sm:h-[48px]"
         />
