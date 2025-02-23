@@ -3,7 +3,7 @@ import Image from "next/image";
 const LoadMoreLoading = () => {
   return (
     <div className="flex items-center justify-center w-full p-2 bg-gradient-to-b from-primary to-secondary animate-pulse">
-      <p className={`text-[20px] text-primary [text-shadow:_-2px_-2px_4_#4062AB,2px_2px_4_#4062AB] font-semibold`}>
+      <p className={`text-[20px] text-primary text-shadow-all font-semibold`}>
         Loading
       </p>
       <Image

@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import plugin from 'tailwindcss/plugin';
 
 export default {
   content: [
@@ -14,7 +15,21 @@ export default {
         primary: "#FFCD0D",
         secondary: "#4062AB",
       },
+      textShadow: {
+        "all": "-2px -2px 4px #4062AB, 2px 2px 4px #4062AB"
+      }
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          'text-shadow': (value) => ({
+            textShadow: value,
+          }),
+        },
+        { values: theme('textShadow') }
+      )
+    }),
+  ],
 } satisfies Config;

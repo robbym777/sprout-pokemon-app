@@ -40,7 +40,7 @@ const PokemonCardComponent = ({ name }: PokemonCardComponentProps) => {
       }}
     >
       <p
-        className={`font-semibold text-primary [text-shadow:_-2px_-2px_4_#4062AB,2px_2px_4_#4062AB] text-[5vw] sm:text-[24px]`}
+        className={`font-semibold text-primary text-shadow-all text-[5vw] sm:text-[24px]`}
       >
         {capitalize(name)}
       </p>

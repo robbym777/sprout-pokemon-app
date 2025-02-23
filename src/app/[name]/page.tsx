@@ -21,7 +21,7 @@ const Page = async ({ params }: Props) => {
       <div className="flex flex-row gap-4 items-center justify-center">
         <div
           className="
-        text-primary [text-shadow:_-2px_-2px_4_#4062AB,2px_2px_4_#4062AB] text-center
+        text-primary text-shadow-all text-center
           text-[9vw] sm:text-[60px] md:text-[72px] lg:text-[84px] 2xl:text-[96px]
         "
         >
@@ -57,7 +57,7 @@ const Page = async ({ params }: Props) => {
               <div>
                 <p
                   className="
-                    text-primary [text-shadow:_-2px_-2px_4_#4062AB,2px_2px_4_#4062AB] 
+                    text-primary text-shadow-all 
                     text-xl sm:text-2xl lg:text-3xl font-bold mb-2 lg:mb-4
                   "
                 >
@@ -119,7 +119,7 @@ const Page = async ({ params }: Props) => {
                         className="
                           whitespace-nowrap font-bold
                           text-[12px] sm:text-lg
-                          text-white [text-shadow:_-2px_-2px_4_#4062AB,2px_2px_4_#4062AB]
+                          text-white text-shadow-all
                         "
                       >
                         {label} :
@@ -128,7 +128,7 @@ const Page = async ({ params }: Props) => {
                         className="
                           font-bold ml-1
                           text-[12px] sm:text-lg
-                          text-white [text-shadow:_-2px_-2px_4_#4062AB,2px_2px_4_#4062AB]
+                          text-white text-shadow-all
                         "
                       >
                         {value}
@@ -141,7 +141,7 @@ const Page = async ({ params }: Props) => {
                 <div>
                   <p
                     className="
-                      text-primary [text-shadow:_-2px_-2px_4_#4062AB,2px_2px_4_#4062AB] 
+                      text-primary text-shadow-all 
                       text-xl sm:text-2xl lg:text-3xl font-bold mb-2 lg:mb-4
                     "
                   >
@@ -157,7 +157,7 @@ const Page = async ({ params }: Props) => {
               <div className="flex flex-col">
                 <p
                   className="
-                    text-primary [text-shadow:_-2px_-2px_4_#4062AB,2px_2px_4_#4062AB]
+                    text-primary text-shadow-all
                     text-xl sm:text-2xl lg:text-3xl font-bold mb-2 lg:mb-4
                   "
                 >
@@ -171,7 +171,7 @@ const Page = async ({ params }: Props) => {
                         className="
                           whitespace-nowrap font-bold
                           text-[12px] sm:text-lg h-auto sm:h-7
-                          text-white [text-shadow:_-2px_-2px_4_#4062AB,2px_2px_4_#4062AB]
+                          text-white text-shadow-all
                         "
                       >
                         {capitalize(stat.stat.name)}
