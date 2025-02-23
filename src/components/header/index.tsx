@@ -4,7 +4,6 @@ import { getListAllPokemon } from "@/services";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import FormSelectComponent from "../form/select";
-import { capitalize } from "@/utils";
 import Image from "next/image";
 
 const HeaderComponent = () => {
@@ -38,7 +37,7 @@ const HeaderComponent = () => {
 
       {/* Search */}
       <FormSelectComponent
-        options={listPokemon.map((name) => capitalize(name))}
+        options={listPokemon}
         onSelect={(e) => router.push(`/${e}`)}
       />
     </nav>

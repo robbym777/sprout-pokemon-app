@@ -1,3 +1,4 @@
+import { capitalize } from "@/utils";
 import { useRef, useState } from "react";
 
 interface FormSelectComponentProps {
@@ -62,7 +63,7 @@ const FormSelectComponent = ({
                 onSelect(item);
               }}
             >
-              {item}
+              {capitalize(item)}
             </button>
           ))}
         </ul>
