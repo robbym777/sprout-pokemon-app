@@ -1,7 +1,7 @@
+import { HeaderComponent } from "@/components";
+import "./globals.css";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import "./globals.css";
-import { Suspense } from "react";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -22,7 +22,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.variable} antialiased`}>
-        <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
+        <HeaderComponent />
+        {children}
+        <img
+          src="/pokeball.svg"
+          alt="pokeball-logo"
+          className="
+            w-[224px] sm:w-[320px] lg:w-[416px] 2xl:w-[512px] h-auto m-0 opacity-25
+            absolute top-0 left-0 right-0 bottom-0 mx-auto my-auto -z-20
+          "
+        />
       </body>
     </html>
   );
