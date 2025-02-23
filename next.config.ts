@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Remove `output: "export"` to allow SSR
   // output: "export",
+  reactStrictMode: true,
   images: {
     remotePatterns: [
       {
